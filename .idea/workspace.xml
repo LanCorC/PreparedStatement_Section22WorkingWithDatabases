@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c67313f-e665-44bd-93fb-0e51e86cf15d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/NewAlbums.csv" afterDir="false" />
+    <list default="true" id="4c67313f-e665-44bd-93fb-0e51e86cf15d" name="Changes" comment="Section 22.365(Working with Databases: Prepared Statement): writing lots of code for artist-album-song insert prepared statements with introduction of the PreparedStatement class&#10;&#10;copied 'printRecords' from MusicDML class of earlier lesson">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PreparedStatement_Section22WorkingWithDatabases.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PreparedStatement_Section22WorkingWithDatabases.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,6 +69,14 @@
       <option name="presentableId" value="Default" />
       <updated>1715589973985</updated>
     </task>
+    <task id="LOCAL-00001" summary="Section 22.365(Working with Databases: Prepared Statement): writing lots of code for artist-album-song insert prepared statements with introduction of the PreparedStatement class&#10;&#10;copied 'printRecords' from MusicDML class of earlier lesson">
+      <created>1715591405652</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715591405652</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -83,5 +89,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Section 22.365(Working with Databases: Prepared Statement): writing lots of code for artist-album-song insert prepared statements with introduction of the PreparedStatement class&#10;&#10;copied 'printRecords' from MusicDML class of earlier lesson" />
+    <option name="LAST_COMMIT_MESSAGE" value="Section 22.365(Working with Databases: Prepared Statement): writing lots of code for artist-album-song insert prepared statements with introduction of the PreparedStatement class&#10;&#10;copied 'printRecords' from MusicDML class of earlier lesson" />
   </component>
 </project>

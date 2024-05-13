@@ -79,20 +79,23 @@ public class ChallengeMain {
                 ){
             conn.setAutoCommit(false);
             int orderId = -1;
+            int count = -1;
             for(String row : reads) {
                 String[] cols = row.split(",");
                 if(cols[0].equals("order")) {
                     System.out.println("Setting new order..");
                     if(orderId != -1) {
-                        isolatedBatchUpload(psItem, conn);
+                        isolatedBatchUpload(psItem, conn, count);
+                        count = 0;
                     }
                     orderId = addOrder(psOrder, cols[1]);
 //                    continue; //just for the current iteration of the for:each
                 } else {
+                    count++;
                     addOrderItem(psItem, orderId, cols[2], Integer.parseInt(cols[1]));
                 }
             }
-            isolatedBatchUpload(psItem, conn);
+            isolatedBatchUpload(psItem, conn, count);
             conn.commit();
         } catch (SQLException e) {
             conn.rollback();
@@ -103,10 +106,14 @@ public class ChallengeMain {
 
     }
 
-    public static void isolatedBatchUpload(PreparedStatement ps, Connection conn)
+    public static void isolatedBatchUpload(PreparedStatement ps, Connection conn, int count)
     throws SQLException {
         try {
-            ps.executeBatch();
+            int[] results = ps.executeBatch();
+            if(results.length != count) {
+                System.out.println("Eww, roll it back! Items dont match!");
+                conn.rollback();
+            }
             conn.commit();
             System.out.println("Yummy");
         } catch (Exception ignore) {

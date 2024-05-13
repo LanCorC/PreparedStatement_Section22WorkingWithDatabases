@@ -49,8 +49,8 @@ public class ChallengeMain {
                     System.out.println("Found new orderId: " + orderId);
                 }
             }
-        } catch(MysqlDataTruncation e) {
-            throw new RuntimeException(e);
+        } catch(Exception ignore) {
+//            throw new MysqlDataTruncation;
         }
 
         return orderId;
@@ -109,9 +109,9 @@ public class ChallengeMain {
             ps.executeBatch();
             conn.commit();
             System.out.println("Yummy");
-        } catch (SQLException e) {
+        } catch (Exception ignore) {
             conn.rollback();
-            throw new RuntimeException(e);
+//            throw new RuntimeException(e);
         }
     }
 }

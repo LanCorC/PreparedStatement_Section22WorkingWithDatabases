@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c67313f-e665-44bd-93fb-0e51e86cf15d" name="Changes" comment="Section 22.366(Working with Databases: Prepared Statement, Continued):&#10;added reading from .csv in project's root directory, method &quot;addDataFromFile&quot;&#10;&#10;includes Files.readAllLines(Path.of(stringPathFileName));&#10;creating loot/iter through all data, re-using all three PreparedStatements">
-      <change afterPath="$PROJECT_DIR$/Orders.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ChallengeMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="4c67313f-e665-44bd-93fb-0e51e86cf15d" name="Changes" comment="Section 22.367(Working with Databases: Challenge: Prepared Statement):&#10;attempt 1 at the challenge;&#10;&#10;seems all is good so far, simply problems with continuing orders after one failure (completes 3 but halts)">
+      <change beforePath="$PROJECT_DIR$/src/ChallengeMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChallengeMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715593307954</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Section 22.367(Working with Databases: Challenge: Prepared Statement):&#10;attempt 1 at the challenge;&#10;&#10;seems all is good so far, simply problems with continuing orders after one failure (completes 3 but halts)">
+      <created>1715598123593</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715598123593</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -119,6 +124,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Section 22.365(Working with Databases: Prepared Statement): writing lots of code for artist-album-song insert prepared statements with introduction of the PreparedStatement class&#10;&#10;copied 'printRecords' from MusicDML class of earlier lesson" />
     <MESSAGE value="Section 22.366(Working with Databases: Prepared Statement, Continued):&#10;added reading from .csv in project's root directory, method &quot;addDataFromFile&quot;&#10;&#10;includes Files.readAllLines(Path.of(stringPathFileName));&#10;creating loot/iter through all data, re-using all three PreparedStatements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Section 22.366(Working with Databases: Prepared Statement, Continued):&#10;added reading from .csv in project's root directory, method &quot;addDataFromFile&quot;&#10;&#10;includes Files.readAllLines(Path.of(stringPathFileName));&#10;creating loot/iter through all data, re-using all three PreparedStatements" />
+    <MESSAGE value="Section 22.367(Working with Databases: Challenge: Prepared Statement):&#10;attempt 1 at the challenge;&#10;&#10;seems all is good so far, simply problems with continuing orders after one failure (completes 3 but halts)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Section 22.367(Working with Databases: Challenge: Prepared Statement):&#10;attempt 1 at the challenge;&#10;&#10;seems all is good so far, simply problems with continuing orders after one failure (completes 3 but halts)" />
   </component>
 </project>

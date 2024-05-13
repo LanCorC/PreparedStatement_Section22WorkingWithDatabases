@@ -79,19 +79,20 @@ public class ChallengeMain {
                 ){
             conn.setAutoCommit(false);
             int orderId = -1;
-            int count = -1;
+            int count = 0;
             for(String row : reads) {
                 String[] cols = row.split(",");
                 if(cols[0].equals("order")) {
-                    System.out.println("Setting new order..");
                     if(orderId != -1) {
                         isolatedBatchUpload(psItem, conn, count);
                         count = 0;
                     }
+                    System.out.println("Setting new order..");
                     orderId = addOrder(psOrder, cols[1]);
 //                    continue; //just for the current iteration of the for:each
-                } else {
+                } else if(orderId != -1) {
                     count++;
+                    System.out.println("Order Id was: " + orderId);
                     addOrderItem(psItem, orderId, cols[2], Integer.parseInt(cols[1]));
                 }
             }
@@ -116,8 +117,9 @@ public class ChallengeMain {
             }
             conn.commit();
             System.out.println("Yummy");
-        } catch (Exception ignore) {
+        } catch (SQLException e) {
             conn.rollback();
+            System.err.println(e.getMessage());
 //            throw new RuntimeException(e);
         }
     }

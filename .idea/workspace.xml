@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c67313f-e665-44bd-93fb-0e51e86cf15d" name="Changes" comment="Section 22.367(Working with Databases: Challenge: Prepared Statement):&#10;attempt 1 at the challenge, continuing;&#10;&#10;just added (Exception ignore) catch blocks, hail mary.&#10;&#10;seeing Tim's solution.">
+    <list default="true" id="4c67313f-e665-44bd-93fb-0e51e86cf15d" name="Changes" comment="Section 22.367(Working with Databases: Challenge: Prepared Statement):&#10;attempt 1 at the challenge, continuing;&#10;&#10;just added way to count if items count matches as listed on .csv">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ChallengeMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChallengeMain.java" afterDir="false" />
     </list>
@@ -115,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715598461175</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Section 22.367(Working with Databases: Challenge: Prepared Statement):&#10;attempt 1 at the challenge, continuing;&#10;&#10;just added way to count if items count matches as listed on .csv">
+      <created>1715599413856</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1715599413856</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -134,6 +141,7 @@
     <MESSAGE value="Section 22.366(Working with Databases: Prepared Statement, Continued):&#10;added reading from .csv in project's root directory, method &quot;addDataFromFile&quot;&#10;&#10;includes Files.readAllLines(Path.of(stringPathFileName));&#10;creating loot/iter through all data, re-using all three PreparedStatements" />
     <MESSAGE value="Section 22.367(Working with Databases: Challenge: Prepared Statement):&#10;attempt 1 at the challenge;&#10;&#10;seems all is good so far, simply problems with continuing orders after one failure (completes 3 but halts)" />
     <MESSAGE value="Section 22.367(Working with Databases: Challenge: Prepared Statement):&#10;attempt 1 at the challenge, continuing;&#10;&#10;just added (Exception ignore) catch blocks, hail mary.&#10;&#10;seeing Tim's solution." />
-    <option name="LAST_COMMIT_MESSAGE" value="Section 22.367(Working with Databases: Challenge: Prepared Statement):&#10;attempt 1 at the challenge, continuing;&#10;&#10;just added (Exception ignore) catch blocks, hail mary.&#10;&#10;seeing Tim's solution." />
+    <MESSAGE value="Section 22.367(Working with Databases: Challenge: Prepared Statement):&#10;attempt 1 at the challenge, continuing;&#10;&#10;just added way to count if items count matches as listed on .csv" />
+    <option name="LAST_COMMIT_MESSAGE" value="Section 22.367(Working with Databases: Challenge: Prepared Statement):&#10;attempt 1 at the challenge, continuing;&#10;&#10;just added way to count if items count matches as listed on .csv" />
   </component>
 </project>

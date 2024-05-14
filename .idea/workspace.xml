@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c67313f-e665-44bd-93fb-0e51e86cf15d" name="Changes" comment="Section 22.367(Working with Databases: Challenge: Prepared Statement):&#10;attempt 1 at the challenge, fixing final issues;&#10;&#10;solved error with foreign key constraint! it's because a failed orderId -1 was being stored in the ps.addBatch(), so it spoiled the batch. adding if(orderId != -1) fixed the issue">
-      <change afterPath="$PROJECT_DIR$/src/MusicCallableStatement.java" afterDir="false" />
+    <list default="true" id="4c67313f-e665-44bd-93fb-0e51e86cf15d" name="Changes" comment="Section 22.368(Working with Databases: CallableStatement):&#10;&#10;introduced to stored procedures; example SQL script (see episode resources), &#10;&#10;took this opportunity to pick apart the I/O Collectors, lambda functions, and Stream&lt;T&gt; code/methods demonstrated here by referring to documentation;&#10;&#10;ran example CallableStatement for stored procedure (input only)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MusicCallableStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MusicCallableStatement.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715600970488</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Section 22.368(Working with Databases: CallableStatement):&#10;&#10;introduced to stored procedures; example SQL script (see episode resources), &#10;&#10;took this opportunity to pick apart the I/O Collectors, lambda functions, and Stream&lt;T&gt; code/methods demonstrated here by referring to documentation;&#10;&#10;ran example CallableStatement for stored procedure (input only)">
+      <created>1715663008639</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1715663008639</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -168,6 +174,7 @@
     <MESSAGE value="Section 22.367(Working with Databases: Challenge: Prepared Statement):&#10;attempt 1 at the challenge, continuing;&#10;&#10;just added (Exception ignore) catch blocks, hail mary.&#10;&#10;seeing Tim's solution." />
     <MESSAGE value="Section 22.367(Working with Databases: Challenge: Prepared Statement):&#10;attempt 1 at the challenge, continuing;&#10;&#10;just added way to count if items count matches as listed on .csv" />
     <MESSAGE value="Section 22.367(Working with Databases: Challenge: Prepared Statement):&#10;attempt 1 at the challenge, fixing final issues;&#10;&#10;solved error with foreign key constraint! it's because a failed orderId -1 was being stored in the ps.addBatch(), so it spoiled the batch. adding if(orderId != -1) fixed the issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="Section 22.367(Working with Databases: Challenge: Prepared Statement):&#10;attempt 1 at the challenge, fixing final issues;&#10;&#10;solved error with foreign key constraint! it's because a failed orderId -1 was being stored in the ps.addBatch(), so it spoiled the batch. adding if(orderId != -1) fixed the issue" />
+    <MESSAGE value="Section 22.368(Working with Databases: CallableStatement):&#10;&#10;introduced to stored procedures; example SQL script (see episode resources), &#10;&#10;took this opportunity to pick apart the I/O Collectors, lambda functions, and Stream&lt;T&gt; code/methods demonstrated here by referring to documentation;&#10;&#10;ran example CallableStatement for stored procedure (input only)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Section 22.368(Working with Databases: CallableStatement):&#10;&#10;introduced to stored procedures; example SQL script (see episode resources), &#10;&#10;took this opportunity to pick apart the I/O Collectors, lambda functions, and Stream&lt;T&gt; code/methods demonstrated here by referring to documentation;&#10;&#10;ran example CallableStatement for stored procedure (input only)" />
   </component>
 </project>

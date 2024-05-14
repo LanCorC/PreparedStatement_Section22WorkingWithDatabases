@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c67313f-e665-44bd-93fb-0e51e86cf15d" name="Changes" comment="Section 22.367(Working with Databases: Challenge: Prepared Statement):&#10;attempt 1 at the challenge, continuing;&#10;&#10;just added way to count if items count matches as listed on .csv">
+    <list default="true" id="4c67313f-e665-44bd-93fb-0e51e86cf15d" name="Changes" comment="Section 22.367(Working with Databases: Challenge: Prepared Statement):&#10;attempt 1 at the challenge, fixing final issues;&#10;&#10;solved error with foreign key constraint! it's because a failed orderId -1 was being stored in the ps.addBatch(), so it spoiled the batch. adding if(orderId != -1) fixed the issue">
+      <change afterPath="$PROJECT_DIR$/src/MusicCallableStatement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChallengeMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChallengeMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,16 +33,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/lance/Documents/CodingJava/PreparedStatement_Section22WorkingWithDatabases",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/lance/Documents/CodingJava/PreparedStatement_Section22WorkingWithDatabases&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\lance\Documents\CodingJava\PreparedStatement_Section22WorkingWithDatabases" />
@@ -50,7 +51,18 @@
       <recent name="C:\Users\lance\Documents\CodingJava\PreparedStatement_Section22WorkingWithDatabases" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Unnamed (1)">
+  <component name="RunManager" selected="Application.MusicCallableStatement">
+    <configuration name="MusicCallableStatement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <envs>
+        <env name="MYSQLUSER" value="accountForDayToDayUse" />
+        <env name="MYSQLPASS" value="uh3h0!0(kj1A" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="MusicCallableStatement" />
+      <module name="PreparedStatement_Section22WorkingWithDatabases" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Unnamed (1)" type="Application" factoryName="Application" nameIsGenerated="true">
       <envs>
         <env name="MYSQLUSER" value="accountForDayToDayUse" />
@@ -76,7 +88,13 @@
     <list>
       <item itemvalue="Application.Unnamed" />
       <item itemvalue="Application.Unnamed (1)" />
+      <item itemvalue="Application.MusicCallableStatement" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MusicCallableStatement" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -122,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715599413856</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Section 22.367(Working with Databases: Challenge: Prepared Statement):&#10;attempt 1 at the challenge, fixing final issues;&#10;&#10;solved error with foreign key constraint! it's because a failed orderId -1 was being stored in the ps.addBatch(), so it spoiled the batch. adding if(orderId != -1) fixed the issue">
+      <created>1715600970488</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1715600970488</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -142,6 +167,7 @@
     <MESSAGE value="Section 22.367(Working with Databases: Challenge: Prepared Statement):&#10;attempt 1 at the challenge;&#10;&#10;seems all is good so far, simply problems with continuing orders after one failure (completes 3 but halts)" />
     <MESSAGE value="Section 22.367(Working with Databases: Challenge: Prepared Statement):&#10;attempt 1 at the challenge, continuing;&#10;&#10;just added (Exception ignore) catch blocks, hail mary.&#10;&#10;seeing Tim's solution." />
     <MESSAGE value="Section 22.367(Working with Databases: Challenge: Prepared Statement):&#10;attempt 1 at the challenge, continuing;&#10;&#10;just added way to count if items count matches as listed on .csv" />
-    <option name="LAST_COMMIT_MESSAGE" value="Section 22.367(Working with Databases: Challenge: Prepared Statement):&#10;attempt 1 at the challenge, continuing;&#10;&#10;just added way to count if items count matches as listed on .csv" />
+    <MESSAGE value="Section 22.367(Working with Databases: Challenge: Prepared Statement):&#10;attempt 1 at the challenge, fixing final issues;&#10;&#10;solved error with foreign key constraint! it's because a failed orderId -1 was being stored in the ps.addBatch(), so it spoiled the batch. adding if(orderId != -1) fixed the issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="Section 22.367(Working with Databases: Challenge: Prepared Statement):&#10;attempt 1 at the challenge, fixing final issues;&#10;&#10;solved error with foreign key constraint! it's because a failed orderId -1 was being stored in the ps.addBatch(), so it spoiled the batch. adding if(orderId != -1) fixed the issue" />
   </component>
 </project>

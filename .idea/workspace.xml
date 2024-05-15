@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c67313f-e665-44bd-93fb-0e51e86cf15d" name="Changes" comment="Section 22.370(Working with Databases: CallableStatement, with functions)&#10;introduced to stored functions; downlaoded calcAlbumLength.sql script (from video resources)&#10;&#10;wrote demonstration code of calling code using a stored function; introduced to JDBC escape sequences {}">
-      <change afterPath="$PROJECT_DIR$/src/Challenge2Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Challenge2Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Challenge2Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

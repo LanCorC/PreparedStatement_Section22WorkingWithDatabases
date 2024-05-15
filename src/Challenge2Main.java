@@ -5,28 +5,66 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.sql.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 //Challenge for revisiting storefront schema with CallableStatement
 public class Challenge2Main {
+    public record Order (String date, List<OrderItems> items) {
+        public Order(String date) {
+            this(date, new ArrayList<>());
+        }
+    }
+    public record OrderItems (String desc, int qty) { }
+
     public static void main(String[] args) {
-        List<String> orders = null;
-        try(var lines = Files.lines(Path.of("Orders.csv"))) {
-            orders = lines.map(s -> s.split(","))
-                    .collect(Collectors.groupingBy(s -> s[ARTIST_COLUMN],
-                            Collectors.groupingBy(s -> s[ALBUM_COLUMN],
-                                    Collectors.mapping(s->s[SONG_COLUMN],
-                                            Collectors.joining(
-                                                    "\",\"",
-                                                    "[\"",
-                                                    "\"]"
-                                            )))));
+        List<String> reads = null;
+        //Read from Orders.csv
+        try {
+            reads = Files.readAllLines(Path.of("Orders.csv"));
         } catch (IOException e) {
             throw new RuntimeException(e);
-        } {
+        }
+        //Process results
+            //See: Map<Order date string, JSON string>
+        List<Order> orders = new ArrayList<>();
+        for(String line : reads) {
+            String[] input = line.split(",");
+            if(input[0].equals("order")) {
+                orders.add(new Order(input[1]));
+            } else {
+                orders.get(orders.size()-1).items().add(
+                        new OrderItems(
+                                input[2], Integer.parseInt(input[1]))
+                );
+            }
+        }
+        //process into JSON string
+        HashMap<Order, String> orderJSON = new HashMap<>();
+        for(Order o : orders) {
+            StringBuilder sb = new StringBuilder();
+            sb.append("["); //suffix
+            boolean first = true;
+            for(OrderItems item : o.items()) {
+                if(!first) {
+                    sb.append(",");
+                }
+                first = false;
+                sb.append("{\"itemDescription\":\"");
+                sb.append(item.desc);
+                sb.append("\", \"qty\":");
+                sb.append(item.qty);
+                sb.append("}");
+            }
+            sb.append("]"); //prefix
+            orderJSON.put(o, sb.toString());
+            System.out.println(sb);
+        }
 
         var dataSource = new MysqlDataSource();
 
@@ -34,23 +72,30 @@ public class Challenge2Main {
         dataSource.setPort(3306);
         dataSource.setDatabaseName("storefront");
 
-
-
         try(Connection connection = dataSource.getConnection(
                 System.getenv("MYSQLUSER"), System.getenv("MYSQLPASS"))
         ) {
-
-            LocalDate date = LocalDate.now();
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss");
-            String time = date.format(formatter);
-            Timestamp ts = Timestamp.valueOf(time);
-
             CallableStatement cs = connection.prepareCall(
-                    "{CALL order.addOrder(?,?,?,?)}");
-            cs.setTimestamp(1, ts);
-
-
-
+                    "{CALL storefront.addOrder(?,?,?,?)}");
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss");
+            orderJSON.forEach( (k, v) -> {
+                LocalDate temp = LocalDate.parse(k.date, formatter);
+                Timestamp ts = Timestamp.valueOf(LocalDateTime.parse(k.date, formatter));
+                try {
+                    cs.setTimestamp(1, ts);
+                    cs.setString(2, v);
+                    cs.setInt(3, 0);
+                    cs.setInt(4, 0);
+//                    cs.registerOutParameter(4, Types.INTEGER);
+                    cs.execute();
+                    System.out.println("Added orderId: " + cs.getInt(3));
+                    System.out.println("Records added: " + cs.getInt(4));
+                } catch (SQLException e) {
+                    System.err.println("Something went wrong!" + e.getMessage());
+                    System.err.println(e.getErrorCode());
+                    e.printStackTrace();
+                }
+            });
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -7,11 +7,10 @@ import java.sql.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.ResolverStyle;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 //Challenge for revisiting storefront schema with CallableStatement
 public class Challenge2Main {
@@ -77,22 +76,20 @@ public class Challenge2Main {
         ) {
             CallableStatement cs = connection.prepareCall(
                     "{CALL storefront.addOrder(?,?,?,?)}");
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss");
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("G yyyy-MM-dd HH:mm:ss")
+                    .withResolverStyle(ResolverStyle.STRICT);
             orderJSON.forEach( (k, v) -> {
-                LocalDate temp = LocalDate.parse(k.date, formatter);
-                Timestamp ts = Timestamp.valueOf(LocalDateTime.parse(k.date, formatter));
                 try {
+                    Timestamp ts = Timestamp.valueOf(LocalDateTime.parse("AD " + k.date(), formatter));
                     cs.setTimestamp(1, ts);
                     cs.setString(2, v);
                     cs.setInt(3, 0);
                     cs.setInt(4, 0);
-//                    cs.registerOutParameter(4, Types.INTEGER);
                     cs.execute();
                     System.out.println("Added orderId: " + cs.getInt(3));
                     System.out.println("Records added: " + cs.getInt(4));
-                } catch (SQLException e) {
+                } catch (Exception e) {
                     System.err.println("Something went wrong!" + e.getMessage());
-                    System.err.println(e.getErrorCode());
                     e.printStackTrace();
                 }
             });
